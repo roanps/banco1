@@ -24,7 +24,7 @@ create table animais(
     cor varchar(100) not null,
     peso float not null,
     altura float not null,
-    constraint fk_td_animal
+    constraint fk_id_tipo_animais_animais
 		foreign key(id_tipo_animal)
         references tipos_animais(id)
 );
@@ -32,6 +32,15 @@ create table animais(
 create table vacinacao(
 	id  int not null auto_increment primary key,
     nome varchar(100),
-    data_aplicacao date
+    data_aplicacao date,
+    id_animal int not null,
+    constraint fk_id_animais_vacinacao
+		foreign key(id_animal)
+        references animais(id)
 );
+
+insert into tipos_animais(tipo)
+values('cachorro'),('gato');
+
+select * from tipos_animais;
 /*ler capitulo 2 do livro*/
