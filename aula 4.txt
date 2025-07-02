@@ -1,3 +1,0 @@
-dml
-dql
-constrains(chaves primária e estrangeira)
